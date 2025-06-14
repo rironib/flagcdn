@@ -1,0 +1,22 @@
+# Node modules and environment
+node_modules/
+.env
+.next/
+out/
+dist/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel/
+
+# Editor folders
+.idea/
+.vscode/
+
+# Flag exclusions
+/flags/lang/
+/flags/misc/
+/flags/other/
