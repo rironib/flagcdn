@@ -1,87 +1,483 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-gray-100 text-gray-800">
+<html class="scroll-smooth" lang="en" style="">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flag CDN</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-    <link rel="shortcut icon" href="/favicon.ico"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
-    <link rel="manifest" href="/site.webmanifest"/>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Flag CDN — Get Circular Country Flags Instantly</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet">
+    <!-- Material Symbols Outlined -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f8f9ff",
+                        "badge-indigo-fg": "#4338CA",
+                        "surface-container-low": "#eff4ff",
+                        "canvas-bg": "#FAFAFA",
+                        "surface-container-highest": "#d9e3f6",
+                        "surface-card": "#FFFFFF",
+                        "border-subtle": "#E5E7EB",
+                        "on-tertiary-container": "#67f4b7",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#005338",
+                        "surface-dim": "#d0dbed",
+                        "surface-variant": "#d9e3f6",
+                        "on-background": "#121c2a",
+                        "primary": "#3525cd",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "inverse-primary": "#c3c0ff",
+                        "surface-container": "#e6eeff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-tint": "#4d44e3",
+                        "on-primary-container": "#dad7ff",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#e2dfff",
+                        "secondary": "#00687a",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "on-tertiary-fixed": "#002113",
+                        "on-secondary-container": "#006172",
+                        "primary-container": "#4f46e5",
+                        "on-primary-fixed": "#0f0069",
+                        "border-hover": "#D1D5DB",
+                        "on-surface": "#121c2a",
+                        "on-surface-variant": "#464555",
+                        "surface-container-high": "#dee9fc",
+                        "surface-bright": "#f8f9ff",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#acedff",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "tertiary-fixed": "#6ffbbe",
+                        "code-bg": "#0F172A",
+                        "secondary-container": "#57dffe",
+                        "on-secondary-fixed": "#001f26",
+                        "outline": "#777587",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#006e4b",
+                        "code-fg": "#F8FAFC",
+                        "inverse-surface": "#27313f",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#c7c4d8",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "badge-indigo-bg": "#EEF2FF",
+                        "background": "#f8f9ff",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "space-xs": "0.25rem",
+                        "margin": "2rem",
+                        "space-md": "1rem",
+                        "space-lg": "1.5rem",
+                        "gutter": "1.5rem",
+                        "space-xl": "2.5rem",
+                        "gutter-mobile": "1rem",
+                        "space-sm": "0.5rem",
+                        "space-2xl": "4rem",
+                        "margin-mobile": "1.25rem"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "display-hero": ["Plus Jakarta Sans"],
+                        "code-terminal": ["JetBrains Mono"],
+                        "code-inline": ["JetBrains Mono"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "display-hero-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-caps": ["11px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-hero": ["56px", { "lineHeight": "64px", "fontWeight": "800" }],
+                        "code-terminal": ["14px", { "lineHeight": "22px", "fontWeight": "500" }],
+                        "code-inline": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-hero-mobile": ["36px", { "lineHeight": "44px", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Subtle 24px developer matrix grid background */
+        .bg-dot-pattern {
+            background-image: radial-gradient(#E5E7EB 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+        }
+    </style>
 </head>
-<body class="font-sans">
-<!-- Header -->
-<header class="bg-white shadow-sm">
-    <div class="max-w-5xl mx-auto px-4 py-5 flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-indigo-600">🌍 Flag CDN</h1>
-        <a href="https://github.com/HatScripts/circle-flags" target="_blank" class="text-sm text-gray-500 hover:text-indigo-600">
-            Source: HatScripts
-        </a>
+
+<body
+    class="bg-canvas-bg text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-primary selection:text-on-primary">
+    <!-- ================= TOP APP BAR (Shared Components JSON) ================= -->
+    <header
+        class="docked full-width top-0 sticky z-50 bg-surface-card/80 dark:bg-code-bg/80 backdrop-blur-md shadow-sm border-b border-border-subtle dark:border-outline/20">
+        <div class="flex justify-between items-center w-full px-6 py-3 max-w-7xl mx-auto">
+            <!-- Brand Logo Anchor -->
+            <a class="text-headline-sm font-headline-sm font-bold text-on-surface dark:text-code-fg flex items-center gap-2 group"
+                href="#">
+
+                <span class="tracking-tight">Flag CDN</span>
+                <span
+                    class="hidden sm:inline-block ml-2 px-2 py-0.5 rounded-full text-label-caps font-label-caps bg-surface-container-low text-primary border border-border-subtle">v2.1</span>
+            </a>
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-6 text-body-md font-body-md">
+                <!-- Active destination is Explorer -->
+
+
+
+
+            </nav>
+            <!-- Right Trailing Cluster -->
+            <div class="flex items-center gap-3">
+                <!-- Trailing Icon Actions -->
+                <a class="p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all duration-150"
+                    href="https://github.com/HatScripts/circle-flags" rel="noopener noreferrer" target="_blank"
+                    title="View Source Code">
+
+                </a>
+                <a class="p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all duration-150"
+                    href="#terminal-playground" title="CLI &amp; API Usage">
+
+                </a>
+                <!-- Trailing Primary Action -->
+                <a class="hidden sm:inline-flex items-center gap-2 bg-primary-container text-on-primary px-3.5 py-1.5 rounded-lg text-body-sm font-headline-sm shadow-sm hover:opacity-95 transition-all active:scale-99"
+                    href="https://github.com/rironib/flagcdn" rel="noopener noreferrer" target="_blank">
+                    <span class="material-symbols-outlined text-sm"
+                        style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+                    Star on GitHub
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- ================= MAIN CANVAS ================= -->
+    <main class="flex-grow bg-dot-pattern">
+        <!-- HERO SECTION -->
+        <section class="max-w-7xl mx-auto px-6 pt-16 pb-12 text-center relative overflow-hidden">
+            <!-- Ambient developer gradient glow -->
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/5 blur-3xl pointer-events-none rounded-full -z-10">
+            </div>
+            <!-- Provenance Pill Badge -->
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-badge-indigo-bg border border-indigo-100 text-badge-indigo-fg text-body-sm font-body-sm mb-6 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-badge-indigo-fg"></span>
+                <span class="">Source: <strong>HatScripts</strong> (HatScripts/circle-flags)</span>
+                <a class="hover:underline flex items-center" href="https://github.com/HatScripts/circle-flags"
+                    rel="noopener noreferrer" target="_blank">
+                    <span class="material-symbols-outlined text-xs ml-0.5">open_in_new</span>
+                </a>
+            </div>
+            <!-- Core Headline -->
+            <h1
+                class="text-display-hero-mobile md:text-display-hero font-display-hero text-on-surface tracking-tight max-w-4xl mx-auto">
+                Get Circular Country Flags Instantly
+            </h1>
+            <!-- Subtitle -->
+            <p class="mt-4 text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Use any ISO 3166-1 alpha-2 code like <code
+                    class="px-2 py-0.5 bg-surface-card border border-border-subtle text-primary rounded text-code-inline font-code-inline">us</code>,
+                <code
+                    class="px-2 py-0.5 bg-surface-card border border-border-subtle text-primary rounded text-code-inline font-code-inline">fr</code>,
+                or <code
+                    class="px-2 py-0.5 bg-surface-card border border-border-subtle text-primary rounded text-code-inline font-code-inline">jp</code>.
+            </p>
+            <!-- Micro Badges -->
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-4 text-body-sm text-on-surface-variant">
+                <span class="flex items-center gap-1.5"><span
+                        class="material-symbols-outlined text-base text-primary">bolt</span> Millisecond Edge
+                    Caching</span>
+                <span class="text-border-hover">•</span>
+                <span class="flex items-center gap-1.5"><span
+                        class="material-symbols-outlined text-base text-primary">aspect_ratio</span> Lossless Vector
+                    SVGs</span>
+                <span class="text-border-hover">•</span>
+                <span class="flex items-center gap-1.5"><span
+                        class="material-symbols-outlined text-base text-primary">key_off</span> No API Keys
+                    Required</span>
+            </div>
+        </section>
+        <!-- LIVE INTERACTIVE EXAMPLE / PLAYGROUND -->
+        <section class="max-w-4xl mx-auto px-6 pb-16" id="terminal-playground">
+            <div class="bg-surface-card rounded-xl border border-border-subtle shadow-md overflow-hidden">
+                <!-- Tab Bar Header -->
+                <div
+                    class="px-4 py-3 bg-surface-container-low border-b border-border-subtle flex flex-wrap items-center justify-between gap-3">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-red-400 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-amber-400 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-emerald-400 inline-block"></span>
+                        <span
+                            class="ml-2 text-label-caps font-label-caps text-on-surface-variant font-medium">Example:</span>
+                    </div>
+                    <!-- Format Pills Switcher -->
+                    <div
+                        class="flex items-center gap-1 bg-surface-container-lowest p-1 rounded-lg border border-border-subtle">
+                        <button
+                            class="px-2.5 py-1 text-label-caps font-label-caps rounded bg-primary text-on-primary font-medium transition-all"
+                            id="tab-html" onclick="setFormat('html')">HTML &lt;img&gt;</button>
+                        <button
+                            class="px-2.5 py-1 text-label-caps font-label-caps rounded text-on-surface-variant hover:text-on-surface transition-all"
+                            id="tab-react" onclick="setFormat('react')">React / Next.js</button>
+                        <button
+                            class="px-2.5 py-1 text-label-caps font-label-caps rounded text-on-surface-variant hover:text-on-surface transition-all"
+                            id="tab-markdown" onclick="setFormat('markdown')">Markdown</button>
+                        <button
+                            class="px-2.5 py-1 text-label-caps font-label-caps rounded text-on-surface-variant hover:text-on-surface transition-all"
+                            id="tab-url" onclick="setFormat('url')">Direct URL</button>
+                    </div>
+                </div>
+                <!-- Terminal Body -->
+                <div
+                    class="p-6 bg-code-bg text-code-fg flex flex-col md:flex-row items-stretch md:items-center justify-between gap-6">
+                    <div class="overflow-x-auto flex-1 font-code-terminal text-code-terminal">
+                        <p class="font-code-terminal" id="code-snippet-display">
+                            &lt;<span class="text-indigo-400">img</span> <span class="text-sky-300">src</span>=<span
+                                class="text-emerald-300">"https://rironib.github.io/flagcdn/flags/us.svg"</span> <span
+                                class="text-sky-300">alt</span>=<span class="text-emerald-300">"US Flag"</span> <span
+                                class="text-sky-300">width</span>=<span class="text-amber-300">"64"</span> <span
+                                class="text-sky-300">height</span>=<span class="text-amber-300">"64"</span> /&gt;
+                        </p>
+                    </div>
+                    <!-- Copy Button Micro-action -->
+                    <button
+                        class="self-start md:self-center shrink-0 flex items-center gap-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-code-fg px-3 py-2 rounded-lg text-body-sm font-headline-sm transition-all active:scale-95"
+                        id="copy-btn" onclick="copySnippet()">
+                        <span class="material-symbols-outlined text-sm" id="copy-icon">content_copy</span>
+                        <span id="copy-label" class="">Copy Code</span>
+                    </button>
+                </div>
+                <!-- Live Dynamic Flag Preview & Size Controls -->
+                <div
+                    class="p-6 bg-surface-card border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="flex items-center justify-center p-3 bg-surface-container-low rounded-xl border border-border-subtle min-w-[110px] min-h-[110px]">
+                            <!-- Target Flag Vector Preview: Circular US Flag -->
+                            <img alt="US Flag" class="rounded-full shadow-sm transition-all duration-200" height="64"
+                                id="live-flag-image" src="flags/us.svg" width="64">
+                        </div>
+                        <div>
+                            <p class="text-headline-sm font-headline-sm text-on-surface" id="current-country-name">
+                                United States</p>
+                            <div class="flex items-center gap-2 mt-1">
+                                <span
+                                    class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps"
+                                    id="current-iso-badge">ISO:
+                                    US</span>
+                                <span class="text-body-sm font-body-sm text-on-surface-variant"
+                                    id="current-size-label">Size: 64 × 64 px</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Size Stepper / Selector -->
+                    <div class="flex items-center gap-2">
+                        <span class="text-label-caps font-label-caps text-on-surface-variant mr-1">PREVIEW SIZE:</span>
+                        <button
+                            class="size-pill px-3 py-1 text-label-caps font-label-caps rounded-md border border-border-subtle hover:border-primary transition-all"
+                            onclick="changePreviewSize(32)">32px</button>
+                        <button
+                            class="size-pill px-3 py-1 text-label-caps font-label-caps rounded-md border border-border-subtle hover:border-primary transition-all"
+                            onclick="changePreviewSize(48)">48px</button>
+                        <button
+                            class="size-pill px-3 py-1 text-label-caps font-label-caps rounded-md border border-primary bg-primary text-on-primary transition-all"
+                            onclick="changePreviewSize(64)">64px</button>
+                        <button
+                            class="size-pill px-3 py-1 text-label-caps font-label-caps rounded-md border border-border-subtle hover:border-primary transition-all"
+                            onclick="changePreviewSize(96)">96px</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- POPULAR FLAGS & INTERACTIVE FLAG EXPLORER -->
+        <section class="max-w-7xl mx-auto px-6 py-10" id="explorer">
+            <!-- Section Header with Search Bar -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+                <div>
+                    <span class="text-label-caps font-label-caps text-primary tracking-wide">INSTANT DIRECTORY</span>
+                    <h2 class="text-headline-lg font-headline-lg text-on-surface mt-1">All Country Flags</h2>
+                    <p class="text-body-md font-body-md text-on-surface-variant mt-1">
+                        Explore all 263 circular flags. Click any flag card to copy its CDN snippet instantly.
+                    </p>
+                </div>
+                <!-- Search / Filter input with cmd+k affordance -->
+                <div class="relative w-full md:w-80">
+                    <span
+                        class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-on-surface-variant">
+                        <span class="material-symbols-outlined text-lg">search</span>
+                    </span>
+                    <input
+                        class="w-full pl-9 pr-14 py-2.5 text-body-sm font-body-sm rounded-lg bg-surface-card border border-border-subtle focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:font-code-terminal placeholder:text-outline-variant"
+                        id="flag-search" oninput="filterFlags()"
+                        placeholder="Filter by country or code (e.g. jp, US)..." type="text">
+                    <span class="absolute inset-y-0 right-0 pr-2.5 flex items-center pointer-events-none">
+                        <kbd
+                            class="px-1.5 py-0.5 text-label-caps font-label-caps bg-surface-container text-on-surface-variant rounded border border-border-subtle">⌘K</kbd>
+                    </span>
+                </div>
+            </div>
+            <!-- Responsive Auto-Fill Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4" id="flags-grid">
+                <!-- Dynamically populated via JavaScript .map() from flags.json -->
+            </div>
+            <!-- No Results State -->
+            <div class="hidden text-center py-12" id="no-results">
+                <span class="material-symbols-outlined text-4xl text-outline-variant">public_off</span>
+                <p class="mt-2 text-headline-sm font-headline-sm text-on-surface">No matching countries</p>
+                <p class="text-body-sm font-body-sm text-on-surface-variant">Try searching by standard 2-letter alpha
+                    code or full country name.</p>
+            </div>
+        </section>
+        <!-- EDGE ARCHITECTURE & CDN FEATURES (Bento Grid Layout) -->
+        <section class="max-w-7xl mx-auto px-6 py-16" id="formats">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-label-caps font-label-caps text-primary tracking-wider uppercase">Built for
+                    Production</span>
+                <h2 class="text-headline-lg font-headline-lg text-on-surface mt-2">Engineered for Global Performance
+                </h2>
+                <p class="text-body-md font-body-md text-on-surface-variant mt-2">
+                    Deploy circular flags into React, Vue, Svelte, iOS, Android, or plain HTML with zero overhead.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Bento Card 1: Vercel Edge -->
+                <div
+                    class="bg-surface-card p-6 rounded-xl border border-border-subtle shadow-sm hover:border-primary/50 transition-all flex flex-col justify-between">
+                    <div>
+                        <div
+                            class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary mb-4">
+                            <span class="material-symbols-outlined text-2xl">speed</span>
+                        </div>
+                        <h3 class="text-headline-sm font-headline-sm text-on-surface">Edge Cached Globally</h3>
+                        <p class="mt-2 text-body-sm font-body-sm text-on-surface-variant">
+                            Every request is served via the global Vercel Edge Network. Smart routing delivers sub-15ms
+                            response times anywhere on Earth.
+                        </p>
+                    </div>
+                    <div
+                        class="mt-6 pt-4 border-t border-border-subtle flex items-center justify-between text-label-caps font-label-caps text-on-surface-variant">
+                        <span class="">UPTIME</span>
+                        <span class="text-tertiary-container font-semibold flex items-center gap-1">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> 99.99% Guaranteed
+                        </span>
+                    </div>
+                </div>
+                <!-- Bento Card 2: Pure SVG Vectors -->
+                <div
+                    class="bg-surface-card p-6 rounded-xl border border-border-subtle shadow-sm hover:border-primary/50 transition-all flex flex-col justify-between">
+                    <div>
+                        <div
+                            class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary mb-4">
+                            <span class="material-symbols-outlined text-2xl">crop_original</span>
+                        </div>
+                        <h3 class="text-headline-sm font-headline-sm text-on-surface">Pure Vector SVG</h3>
+                        <p class="mt-2 text-body-sm font-body-sm text-on-surface-variant">
+                            Lightweight SVG assets that scale losslessly from a 16px navigation avatar to a 512px hero
+                            banner with crisp edges on Retina screens.
+                        </p>
+                    </div>
+                    <div
+                        class="mt-6 pt-4 border-t border-border-subtle flex items-center justify-between text-label-caps font-label-caps text-on-surface-variant">
+                        <span class="">AVERAGE SIZE</span>
+                        <span class="font-semibold text-primary">~1.2 KB / asset</span>
+                    </div>
+                </div>
+                <!-- Bento Card 3: HatScripts Open Source -->
+                <div
+                    class="bg-surface-card p-6 rounded-xl border border-border-subtle shadow-sm hover:border-primary/50 transition-all flex flex-col justify-between">
+                    <div>
+                        <div
+                            class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary mb-4">
+                            <span class="material-symbols-outlined text-2xl">code_blocks</span>
+                        </div>
+                        <h3 class="text-headline-sm font-headline-sm text-on-surface">Open Source Provenance</h3>
+                        <p class="mt-2 text-body-sm font-body-sm text-on-surface-variant">
+                            Curated from the widely acclaimed <code
+                                class="text-code-inline font-code-inline text-primary">HatScripts/circle-flags</code>
+                            dataset. Contains over 400+ world flags and administrative divisions.
+                        </p>
+                    </div>
+                    <div
+                        class="mt-6 pt-4 border-t border-border-subtle flex items-center justify-between text-label-caps font-label-caps text-on-surface-variant">
+                        <span class="">LICENSE</span>
+                        <span class="font-semibold">Public Domain / MIT</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+    <!-- ================= FOOTER (Shared Components JSON) ================= -->
+    <footer
+        class="docked full-width bottom bg-surface dark:bg-code-bg border-t border-border-subtle dark:border-outline/20">
+        <div class="w-full max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+            <!-- Brand & Source Attribution -->
+            <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+
+                <div class="text-body-sm font-body-sm text-on-surface-variant dark:text-outline-variant">
+                    © 2026 Flag CDN
+                </div>
+            </div>
+            <!-- Footer Navigation Links -->
+            <div class="flex flex-wrap justify-center items-center gap-6 text-body-sm font-body-sm">
+
+                <a class="text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-code-fg transition-colors duration-150"
+                    href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2" rel="noopener noreferrer"
+                    target="_blank">ISO 3166-1 Codes</a>
+
+                <a class="text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-code-fg transition-colors duration-150"
+                    href="https://vercel.com" rel="noopener noreferrer" target="_blank">Vercel</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Inline Toast Container for Micro-actions -->
+    <div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 pointer-events-none transition-all duration-200 bg-code-bg text-code-fg border border-slate-700 px-4 py-3 rounded-lg shadow-xl flex items-center gap-3"
+        id="toast">
+        <span class="material-symbols-outlined text-emerald-400 text-lg">check_circle</span>
+        <span class="text-body-sm font-body-sm" id="toast-text">CDN snippet copied to clipboard!</span>
     </div>
-</header>
-
-<!-- Hero Section -->
-<section class="max-w-4xl mx-auto p-6 text-center">
-    <h2 class="text-3xl font-semibold mb-4">Get Circular Country Flags Instantly</h2>
-    <p class="text-gray-600 mb-6">
-        Use any ISO 3166-1 alpha-2 code like <code class="bg-gray-100 px-1 rounded">us</code>, <code class="bg-gray-100 px-1 rounded">fr</code>, or <code class="bg-gray-100 px-1 rounded">jp</code>.
-    </p>
-
-    <div class="bg-white rounded shadow p-4 mb-8">
-        <p class="text-sm font-medium mb-2 text-left">Example:</p>
-        <code class="block bg-gray-100 p-3 rounded text-sm text-left overflow-x-auto">
-            &lt;img src="https://flagcdn.vercel.app/flags/us.svg" alt="US Flag" width="64" height="64" /&gt;
-        </code>
-        <div class="mt-4 flex justify-center">
-            <img src="/flags/us.svg" alt="US Flag" class="w-16 h-16 rounded-full border" />
-        </div>
-    </div>
-</section>
-
-<!-- Popular Flags Grid -->
-<section class="max-w-5xl mx-auto px-6">
-    <h3 class="text-xl font-semibold mb-4">Popular Flags</h3>
-    <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-6">
-        <div class="text-center">
-            <img src="/flags/us.svg" alt="US" class="w-12 h-12 mx-auto rounded-full border" />
-            <span class="text-sm text-gray-600 mt-1 block">US</span>
-        </div>
-        <div class="text-center">
-            <img src="/flags/gb.svg" alt="GB" class="w-12 h-12 mx-auto rounded-full border" />
-            <span class="text-sm text-gray-600 mt-1 block">GB</span>
-        </div>
-        <div class="text-center">
-            <img src="/flags/fr.svg" alt="FR" class="w-12 h-12 mx-auto rounded-full border" />
-            <span class="text-sm text-gray-600 mt-1 block">FR</span>
-        </div>
-        <div class="text-center">
-            <img src="/flags/de.svg" alt="DE" class="w-12 h-12 mx-auto rounded-full border" />
-            <span class="text-sm text-gray-600 mt-1 block">DE</span>
-        </div>
-        <div class="text-center">
-            <img src="/flags/jp.svg" alt="JP" class="w-12 h-12 mx-auto rounded-full border" />
-            <span class="text-sm text-gray-600 mt-1 block">JP</span>
-        </div>
-        <div class="text-center">
-            <img src="/flags/in.svg" alt="IN" class="w-12 h-12 mx-auto rounded-full border" />
-            <span class="text-sm text-gray-600 mt-1 block">IN</span>
-        </div>
-        <div class="text-center">
-            <img src="/flags/it.svg" alt="IT" class="w-12 h-12 mx-auto rounded-full border" />
-            <span class="text-sm text-gray-600 mt-1 block">IT</span>
-        </div>
-        <div class="text-center">
-            <img src="/flags/ca.svg" alt="CA" class="w-12 h-12 mx-auto rounded-full border" />
-            <span class="text-sm text-gray-600 mt-1 block">CA</span>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="text-center text-sm text-gray-500 py-6 mt-12">
-    &copy; 2025 Flag CDN — Hosted on <a href="https://vercel.com" class="text-indigo-500 hover:underline">Vercel</a>
-</footer>
+    <!-- INTERACTIVE PLAYGROUND SCRIPT -->
+    <script src="app.js"></script>
 </body>
+
 </html>
